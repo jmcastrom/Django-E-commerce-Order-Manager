@@ -1,0 +1,27 @@
+{% extends 'pedido/base1.html' %}
+
+{% block title %}Detalles del Pedido{% endblock %}
+
+{% block header_title %}Detalles del Pedido{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2>Detalles del Pedido</h2>
+            <p><strong>ID:</strong> {{ pedido.id }}</p>
+            <p><strong>Fecha:</strong> {{ pedido.fecha }}</p>
+            <p><strong>Dirección de Envío:</strong> {{ pedido.direccion }}</p>
+            <p><strong>Cantidad:</strong> {{ pedido.cantidad }}</p>
+            <p><strong>Precio:</strong> ${{ pedido.precio }}</p>
+            <div>
+               <form action="{% url 'eliminar_pedido' pedido.id %}" method="post" style="display: inline;">
+                  {% csrf_token %}
+                  <button type="submit" class="btn btn-danger">Delete</button>
+               </form>
+                <a href="{% url 'listar_pedidos' %}" class="btn btn-primary">Volver a la Lista</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

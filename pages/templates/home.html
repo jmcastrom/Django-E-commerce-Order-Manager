@@ -1,0 +1,28 @@
+{% extends 'pedido/base1.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block header_title %}Welcome to Juanmi's - Online Store{% endblock %}
+
+{% block content %}
+<div class="row">
+   <div class="col-md-8 offset-md-2">
+      <h2>Juanmi's - Online Store</h2>
+      <p>Find sustainable and eco-friendly products for your lifestyle.</p>
+      <p>Explore our collection and start shopping!</p>
+   </div>
+</div>
+<div class="row mt-4">
+   <div class="col-md-6 offset-md-3">
+      <div class="card text-center">
+         <div class="card-header">
+            Activities
+         </div>
+         <div class="card-body">
+            <a href="{% url 'formulario_creacion' %}" class="btn btn-success">Create Product</a> <!-- Cambiar el color a verde -->
+            <a href="{% url 'listar_pedidos' %}" class="btn btn-secondary">List Products</a>
+         </div>
+      </div>
+   </div>
+</div>
+{% endblock %}

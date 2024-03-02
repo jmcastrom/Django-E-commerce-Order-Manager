@@ -1,0 +1,15 @@
+{% extends 'pedido/base1.html' %}
+
+{% block title %}Create Product{% endblock %}
+
+{% block header_title %}Create Product{% endblock %}
+
+{% block content %}
+  <h2>Crear Pedido</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p>Nota: Cada producto tiene un precio fijo de $10.</p>
+    <button type="submit">Guardar</button>
+  </form>
+{% endblock %}
